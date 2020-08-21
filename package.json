@@ -1,6 +1,6 @@
 {
   "name": "semo-plugin-repl-tldr",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Semo plugin to provide ability to get tldr for common commands",
   "keywords": [
     "semo",
