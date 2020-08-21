@@ -8,12 +8,14 @@ A Semo plugin to provide ability to get tldr for common commands
 npm i -g @semo/cli semo-plugin-repl-tldr
 semo repl --hook
 >>> .tldr tar
+>>> .tldr vue --lang=zh
+>>> .tldr w --type=osx
 ```
 
 ## TODOs
 
-- [ ] support tldr type, `--type`
-- [ ] support tldr translation `--lang`
+- [x] support tldr type, `--type`
+- [x] support tldr translation `--lang`
 
 ## Source
 

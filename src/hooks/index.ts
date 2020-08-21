@@ -13,8 +13,10 @@ export = (Utils) => {
             } else {
               // @ts-ignore
               this.clearBufferedCommand()
-              
-              await getTldr(input)
+              let opts = Utils.yParser(input)
+              let keyword = opts._.join(' ')
+
+              await getTldr(keyword, opts)
 
                // @ts-ignore
               this.displayPrompt()

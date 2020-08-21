@@ -5,9 +5,11 @@ marked.setOptions({
   renderer: new TerminalRenderer()
 })
 
-export const getTldr = async (input) => {
+export const getTldr = async (input, opts) => {
   try {
-    const url = `https://gitee.com/vipzhicheng/tldr/raw/master/pages/common/${input}.md`
+    const type = opts.type || 'common'
+    const langPage = opts.lang ? `pages.${opts.lang}` : 'pages'
+    const url = `https://gitee.com/vipzhicheng/tldr/raw/master/${langPage}/${type}/${input}.md`
     const response: any = await got(url)
     console.log(marked(response.body))
 
