@@ -11,10 +11,14 @@ marked.setOptions({
 
 export const getTldr = async (input, opts) => {
   try {
-    const type = opts.type || 'common'
-    const langPage = opts.lang ? `pages.${opts.lang}` : 'pages'
+    const type = 'common'
+    const langPage = 'pages'
     const url = `https://gitee.com/vipzhicheng/tldr/raw/master/${langPage}/${type}/${input}.md`
-    const response: any = await got(url)
+    const response: any = await got(url, {
+      headers: {
+        'User-Agent': 'firefox'
+      }
+    })
 
     Utils.consoleReader(marked(response.body), {
       plugin: 'semo-plugin-repl-tldr',
